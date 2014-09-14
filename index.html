@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html data-ng-app="app" data-ng-controller="IndexController">
+<head>
+  <title>Individ i fællesskab</title>
+  <meta name="author" content="Troels Ugilt Jensen">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  
+  <script src="tekster.js"></script>
+  <script src="angular.min.js"></script>
+  <script src="angular-animate.min.js"></script>
+  <script src="app.js"></script>
+</head>
+<body>
+  <div id="i_content">
+	<div class="slide" data-ng-repeat="ent in i" data-ng-show="showI($index)">{{ent}}</div>
+  </div>  
+  <br/>
+  <br/>
+  <div id="we_content">
+    <div class="slide" data-ng-repeat="ent in we" data-ng-show="showWe($index)">{{ent}}</div>
+  </div>
+</body>
+</html>

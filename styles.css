@@ -1,0 +1,10 @@
+.slide {
+  -webkit-transition: opacity 1s ease-in;
+  -moz-transition: opacity 1s ease-in;
+  -o-transition: opacity 1s ease-in;
+  transition: opacity 1s ease-in;
+}
+
+.slide.ng-hide {
+  opacity:0;
+}
