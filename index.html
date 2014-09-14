@@ -5,19 +5,20 @@
   <meta name="author" content="Troels Ugilt Jensen">
   <link rel="stylesheet" type="text/css" href="styles.css">
   
-  <script src="tekster.js"></script>
+  <!-- Import scripts -->
   <script src="angular.min.js"></script>
   <script src="angular-animate.min.js"></script>
+
+  <!-- Custom scripts -->
+  <script src="tekster.js"></script>
   <script src="app.js"></script>
 </head>
 <body>
-  <div id="i_content">
-	<div class="slide" data-ng-repeat="ent in i" data-ng-show="showI($index)">{{ent}}</div>
-  </div>  
-  <br/>
-  <br/>
-  <div id="we_content">
-    <div class="slide" data-ng-repeat="ent in we" data-ng-show="showWe($index)">{{ent}}</div>
+  <div class="content" data-ng-show="lineIndex == 0">
+  	<div class="line" data-ng-repeat="line in lines[0]" data-ng-class="{'is-active': highlightIndex == $index}">{{line}}</div>
+  </div>
+  <div class="content" data-ng-show="lineIndex == 1">
+  <div class="line" data-ng-repeat="line in lines[1]" data-ng-class="{'is-active': highlightIndex == $index}">{{line}}</div>
   </div>
 </body>
 </html>
