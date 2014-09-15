@@ -1,0 +1,28 @@
+body {
+  color: #FF99CC;
+  background-color: #9900CC;
+  font-size: 50px;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+/*
+  -webkit-transition: opacity .5s ease-in;
+  -moz-transition: opacity .5s ease-in;
+  -o-transition: opacity .5s ease-in;
+  transition: opacity .5s ease-in;
+*/
+}
+
+.content.ng-hide {
+  opacity:0;
+}
+
+.is-active {
+  color: white;
+  text-shadow: 0 0 0.1em #FF99CC, 
+               0 0 0.1em #FF99CC,
+               0 0 0.1em #FF99CC
+}
