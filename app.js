@@ -1,6 +1,11 @@
 var app = angular.module('app', ['ngAnimate']);
 
 app.controller('IndexController', ['$scope', '$interval', '$timeout', function ($scope, $interval, $timeout) {
+  $scope.fontsize = '50px';
+  $scope.offsetX = '0px';
+  $scope.offsetY = '0px';
+  $scope.initializing = true;
+
   $scope.lines = [];
   $scope.lines[0] = [];
   $scope.lines[1] = [];
@@ -63,11 +68,15 @@ app.controller('IndexController', ['$scope', '$interval', '$timeout', function (
     }
   }
 
-  // Start highlighting
-  $timeout(startHighlighting, 500);
-
   // Start interval.
-  $interval(function() {
-    startShow();
-  }, 30500);
+  $scope.start = function() {
+    $scope.initializing = false;
+
+    // Start highlighting
+    $timeout(startHighlighting, 500);
+
+    $interval(function() {
+      startShow();
+    }, 30500);
+  };
 }]);
