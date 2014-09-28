@@ -20,7 +20,7 @@
     Offset y:<input type="text" data-ng-model="offsetY"><br>
     <button data-ng-click="start()">Start</button>
   </div>
-  <div data-ng-show="!initializing" style="position: absolute; width: 10000px; height: 10000px;" data-ng-style="{'font-size': fontsize, 'left': offsetX, 'right': offsetY}">
+  <div data-ng-show="!initializing" style="position: absolute; width: 10000px; height: 10000px;" data-ng-style="{'font-size': fontsize, 'left': offsetX, 'top': offsetY}">
     <div class="content" data-ng-show="lineIndex == 0">
       <div class="line" data-ng-repeat="line in lines[0]" data-ng-class="{'is-active': highlightIndex == $index}">{{line}}</div>
     </div>
