@@ -1,0 +1,58 @@
+body {
+  color: #999;
+  background-color: #000;
+  font-size: 50px;
+  font-family: monospace;
+  overflow: hidden;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  -webkit-transition: opacity 1.5s ease-in;
+  -moz-transition: opacity 1.5s ease-in;
+  -o-transition: opacity 1.5s ease-in;
+  transition: opacity 1.5s ease-in;
+}
+
+.content.ng-hide {
+  opacity: 0;
+}
+
+.is-active {
+  color: #fff;
+  text-shadow: 0 0 0.1em #FFF,
+               0 0 0.1em #FFF,
+               0 0 0.1em #FFF
+}
+
+.red {
+color: red;
+  text-shadow: 0 0 0.1em red,
+               0 0 0.1em red,
+               0 0 0.1em red  
+}
+
+.green {
+color: green;
+  text-shadow: 0 0 0.1em green,
+               0 0 0.1em green,
+               0 0 0.1em green  
+}
+
+.blue {
+color: blue;
+  text-shadow: 0 0 0.1em blue,
+               0 0 0.1em blue,
+               0 0 0.1em blue  
+}
+
+.yellow {
+color: yellow;
+  text-shadow: 0 0 0.1em yellow,
+               0 0 0.1em yellow,
+               0 0 0.1em yellow  
+}
+}

@@ -3,22 +3,22 @@ body {
   background-color: #000;
   font-size: 50px;
   font-family: monospace;
+    overflow: hidden;
 }
 
 .content {
   position: absolute;
   top: 0;
   left: 0;
-/*
-  -webkit-transition: opacity .5s ease-in;
-  -moz-transition: opacity .5s ease-in;
-  -o-transition: opacity .5s ease-in;
-  transition: opacity .5s ease-in;
-*/
+
+  -webkit-transition: opacity 1.5s ease-in;
+  -moz-transition: opacity 1.5s ease-in;
+  -o-transition: opacity 1.5s ease-in;
+  transition: opacity 1.5s ease-in;
 }
 
 .content.ng-hide {
-  opacity:0;
+  opacity: 0;
 }
 
 .is-active {
