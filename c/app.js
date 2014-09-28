@@ -22,12 +22,15 @@ app.controller('IndexController', ['$scope', '$interval', '$timeout', function (
     }, fadeTime / 2);
   };
 
+  $scope.lines[0] = kulturnat.i[ Math.floor((Math.random() * kulturnat.i.length))];
+  $scope.lines[1] = kulturnat.i[ Math.floor((Math.random() * kulturnat.i.length))];
+
   // Start interval.
   $scope.start = function() {
     $scope.initializing = false;
 
     $interval(function() {
       startShow();
-    }, fadeTime * 2 + rotationTime);
+    }, fadeTime + rotationTime);
   };
 }]);
