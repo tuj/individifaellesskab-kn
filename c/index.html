@@ -21,12 +21,10 @@
     <button data-ng-click="start()">Start</button>
   </div>
   <div data-ng-show="!initializing" style="position: absolute; width: 10000px; height: 10000px;" data-ng-style="{'font-size': fontsize, 'left': offsetX, 'right': offsetY}">
-    <div class="content" data-ng-show="lineIndex == 0">
-      <div class="line">{{line1}}</div>
+    <div class="content">
+      <div class="line" data-ng-show="showLine == 0">{{lines[0]}}</div>
+      <div class="line" data-ng-show="showLine == 1">{{lines[1]}}</div>
     </div>
-    <div class="content" data-ng-show="lineIndex == 1">
-      <div class="line">{{line2}}</div>
-    </div>  
   </div>
 </body>
 </html>

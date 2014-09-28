@@ -6,45 +6,28 @@ app.controller('IndexController', ['$scope', '$interval', '$timeout', function (
   $scope.offsetY = '0px';
   $scope.initializing = true;
 
-  $scope.line1 = "";
-  $scope.line2 = "";
+  $scope.lines = [];
   $scope.showLine = 0;
   
-  var fadeTime = 500;
+  var fadeTime = 2000;
+  var rotationTime = 2000;
     
   var startShow = function() {
-	$scope.showLine = ($scope.showLine + 1) % 2;
+    var oldLine = $scope.showLine;
+    $scope.showLine = ($scope.showLine + 1) % 2;
 
     $timeout(function() {
       var i = Math.floor((Math.random() * kulturnat.i.length));
-      $scope.lines[nextLineIndex].push(kulturnat.i[i]);
-    }, fadeTime);
+      $scope.lines[oldLine] = kulturnat.i[i];
+    }, fadeTime / 2);
   };
-
-    var i = Math.floor((Math.random() * kulturnat.i.length));
-    
-    if ($scope.lines[0].indexOf(kulturnat.i[i]) < 0) {
-      $scope.lines[0].push(kulturnat.i[i]);
-    }
-  }
-  // Setup second array.
-  while ($scope.lines[1].length < $scope.numberOfLines) {
-    var i = Math.floor((Math.random() * kulturnat.i.length));
-    
-    if ($scope.lines[1].indexOf(kulturnat.i[i]) < 0) {
-      $scope.lines[1].push(kulturnat.i[i]);
-    }
-  }
 
   // Start interval.
   $scope.start = function() {
     $scope.initializing = false;
 
-    // Start highlighting
-    $timeout(startHighlighting, fadeTime);
-
     $interval(function() {
       startShow();
-    }, fadeTime + highlightTime * $scope.numberOfLines);
+    }, fadeTime * 2 + rotationTime);
   };
 }]);

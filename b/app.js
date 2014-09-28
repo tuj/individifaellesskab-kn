@@ -13,7 +13,7 @@ app.controller('IndexController', ['$scope', '$interval', '$timeout', function (
   $scope.lineIndex = 1;
 
   $scope.colors = [
-	 "red", "green", "blue", "yellow"
+	 "red", "lawngreen", "aqua", "yellow", "fuchsia", "yellowgreen", "orange"
   ];
   $scope.colorIndex = 0;
   
