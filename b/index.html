@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html data-ng-app="app" data-ng-controller="IndexController">
+<head>
+  <title>Individ i fællesskab</title>
+  <meta name="author" content="Troels Ugilt Jensen">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  
+  <!-- Import scripts -->
+  <script src="angular.min.js"></script>
+  <script src="angular-animate.min.js"></script>
+
+  <!-- Custom scripts -->
+  <script src="tekster.js"></script>
+  <script src="app.js"></script>
+</head>
+<body>
+  <div data-ng-show="initializing">
+    Font-size: <input type="text" data-ng-model="fontsize"><br>
+    Offset x: <input type="text" data-ng-model="offsetX"><br>
+    Offset y:<input type="text" data-ng-model="offsetY"><br>
+    <button data-ng-click="start()">Start</button>
+  </div>
+  <div data-ng-show="!initializing" style="position: absolute; width: 10000px; height: 10000px;" data-ng-style="{'font-size': fontsize, 'left': offsetX, 'top': offsetY}">
+    <div class="content" data-ng-show="lineIndex == 0">
+      <div class="line" data-ng-repeat="line in lines[0]" data-ng-class="(highlightIndex == $index) ? getColorClass() : null">{{line}}</div>
+    </div>
+    <div class="content" data-ng-show="lineIndex == 1">
+      <div class="line" data-ng-repeat="line in lines[1]" data-ng-class="(highlightIndex == $index) ? getColorClass() : null">{{line}}</div>
+    </div>  
+  </div>
+</body>
+</html>

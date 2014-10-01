@@ -1,0 +1,84 @@
+body {
+  color: #999;
+  background-color: #000;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  overflow: hidden;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  -webkit-transition: opacity 1.5s ease-in;
+  -moz-transition: opacity 1.5s ease-in;
+  -o-transition: opacity 1.5s ease-in;
+  transition: opacity 1.5s ease-in;
+}
+
+.content.ng-hide {
+  -webkit-transition: opacity 1.5s ease-out;
+  -moz-transition: opacity 1.5s ease-out;
+  -o-transition: opacity 1.5s ease-out;
+  transition: opacity 1.5s ease-out;
+  opacity: 0;
+}
+
+.is-active {
+  color: #fff;
+  text-shadow: 0 0 0.1em #FFF,
+               0 0 0.1em #FFF,
+               0 0 0.1em #FFF
+}
+
+
+.red {
+color: red;
+  text-shadow: 0 0 0.1em red,
+               0 0 0.1em red,
+               0 0 0.1em red  
+}
+
+.green {
+  color: lawngreen;
+  text-shadow: 0 0 0.1em lawngreen,
+               0 0 0.1em lawngreen,
+               0 0 0.1em lawngreen  
+}
+
+.aqua {
+  color: aqua;
+  text-shadow: 0 0 0.1em aqua,
+               0 0 0.1em aqua,
+               0 0 0.1em aqua  
+}
+
+.yellow {
+  color: yellow;
+  text-shadow: 0 0 0.1em yellow,
+               0 0 0.1em yellow,
+               0 0 0.1em yellow  
+}
+
+.yellowgreen {
+  color: yellow;
+  text-shadow: 0 0 0.1em yellowGreen,
+               0 0 0.1em yellowGreen,
+               0 0 0.1em yellowGreen  
+}
+
+.fuchsia {
+   color: fuchsia;
+  text-shadow: 0 0 0.1em fuchsia,
+               0 0 0.1em fuchsia,
+               0 0 0.1em fuchsia  
+}
+
+.orange {
+   color: orange;
+  text-shadow: 0 0 0.1em orange,
+               0 0 0.1em orange,
+               0 0 0.1em orange  
+}
