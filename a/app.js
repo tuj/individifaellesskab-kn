@@ -56,25 +56,25 @@ app.controller('IndexController', ['$scope', '$interval', '$timeout', function (
     }, fadeTime);
   };
 
-  // Setup first array.
-  while ($scope.lines[0].length < $scope.numberOfLines) {
-    var i = Math.floor((Math.random() * kulturnat.i.length));
-    
-    if ($scope.lines[0].indexOf(kulturnat.i[i]) < 0) {
-      $scope.lines[0].push(kulturnat.i[i]);
-    }
-  }
-  // Setup second array.
-  while ($scope.lines[1].length < $scope.numberOfLines) {
-    var i = Math.floor((Math.random() * kulturnat.i.length));
-    
-    if ($scope.lines[1].indexOf(kulturnat.i[i]) < 0) {
-      $scope.lines[1].push(kulturnat.i[i]);
-    }
-  }
-
   // Start interval.
   $scope.start = function() {
+    // Setup first array.
+    while ($scope.lines[0].length < $scope.numberOfLines) {
+      var i = Math.floor((Math.random() * kulturnat.i.length));
+
+      if ($scope.lines[0].indexOf(kulturnat.i[i]) < 0) {
+        $scope.lines[0].push(kulturnat.i[i]);
+      }
+    }
+    // Setup second array.
+    while ($scope.lines[1].length < $scope.numberOfLines) {
+      var i = Math.floor((Math.random() * kulturnat.i.length));
+
+      if ($scope.lines[1].indexOf(kulturnat.i[i]) < 0) {
+        $scope.lines[1].push(kulturnat.i[i]);
+      }
+    }
+
     $scope.initializing = false;
 
     // Start highlighting
