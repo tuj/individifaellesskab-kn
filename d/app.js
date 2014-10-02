@@ -8,8 +8,11 @@ app.controller('IndexController', ['$scope', '$interval', '$timeout', function (
   $scope.scrollTime = 500;
   $scope.initializing = true;
   $scope.sliding = false;
+  $scope.whichList = "vi";
 
   $scope.lines = [];
+
+  var theList = [];
 
   var startShow = function() {
     // Set top.
@@ -21,7 +24,7 @@ app.controller('IndexController', ['$scope', '$interval', '$timeout', function (
     for (var i = 0; i < $scope.numberOfLinesPrChunk; i++) {
       var newLine = null;
       do {
-        newLine = kulturnat.i[ Math.floor((Math.random() * kulturnat.i.length))];
+        newLine = theList[ Math.floor((Math.random() * theList.length))];
       } while (newLine == lastLine);
 
       newLines.push(newLine);
@@ -47,6 +50,12 @@ app.controller('IndexController', ['$scope', '$interval', '$timeout', function (
   // Start interval.
   $scope.start = function() {
     $scope.initializing = false;
+
+    if ($scope.whichList == 'jeg') {
+      theList = kulturnat.i;
+    } else if ($scope.whichList == 'vi') {
+      theList = kulturnat.we;
+    }
 
     // Start the show.
     startShow();

@@ -6,8 +6,8 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
   
   <!-- Import scripts -->
-  <script src="angular.min.js"></script>
-  <script src="angular-animate.min.js"></script>
+  <script src="../angular.min.js"></script>
+  <script src="../angular-animate.min.js"></script>
 
   <!-- Custom scripts -->
   <script src="tekster.js"></script>
@@ -17,7 +17,8 @@
   <div data-ng-show="initializing">
     Font-size: <input type="text" data-ng-model="fontsize"><br>
     Offset x: <input type="text" data-ng-model="offsetX"><br>
-    Offset y:<input type="text" data-ng-model="offsetY"><br>
+    Offset y: <input type="text" data-ng-model="offsetY"><br>
+    Which list: <input type="text" data-ng-model="whichList"> (vi/jeg)<br>
     <button data-ng-click="start()">Start</button>
   </div>
   <div data-ng-show="!initializing" style="position: absolute; width: 10000px; height: 10000px;" data-ng-style="{'font-size': fontsize, 'left': offsetX, 'top': offsetY}">

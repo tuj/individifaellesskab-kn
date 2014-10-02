@@ -5,28 +5,36 @@ app.controller('IndexController', ['$scope', '$interval', '$timeout', function (
   $scope.offsetX = '0px';
   $scope.offsetY = '0px';
   $scope.initializing = true;
+  $scope.whichList = "vi";
 
   $scope.lines = [];
   $scope.showLine = 0;
   
   var fadeTime = 2000;
   var rotationTime = 3000;
-    
+
+  var theList;
+
   var startShow = function() {
     var oldLine = $scope.showLine;
     $scope.showLine = ($scope.showLine + 1) % 2;
 
     $timeout(function() {
-      var i = Math.floor((Math.random() * kulturnat.i.length));
-      $scope.lines[oldLine] = kulturnat.i[i];
+      var i = Math.floor((Math.random() * theList.length));
+      $scope.lines[oldLine] = theList[i];
     }, fadeTime / 2);
   };
 
-  $scope.lines[0] = kulturnat.i[ Math.floor((Math.random() * kulturnat.i.length))];
-  $scope.lines[1] = kulturnat.i[ Math.floor((Math.random() * kulturnat.i.length))];
-
   // Start interval.
   $scope.start = function() {
+    if ($scope.whichList == 'jeg') {
+      theList = kulturnat.i;
+    } else if ($scope.whichList == 'vi') {
+      theList = kulturnat.we;
+    }
+    $scope.lines[0] = theList[ Math.floor((Math.random() * theList.length))];
+    $scope.lines[1] = theList[ Math.floor((Math.random() * theList.length))];
+
     $scope.initializing = false;
 
     $interval(function() {

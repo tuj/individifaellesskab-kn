@@ -6,6 +6,7 @@ app.controller('IndexController', ['$scope', '$interval', '$timeout', function (
   $scope.offsetY = '0px';
   $scope.initializing = true;
   $scope.numberOfLines = 10;
+  $scope.whichList = "vi";
 
   $scope.lines = [];
   $scope.lines[0] = [];
@@ -17,6 +18,8 @@ app.controller('IndexController', ['$scope', '$interval', '$timeout', function (
 
   var highlightTime = 3500;
   var fadeTime = 2000;
+
+  var theList = [];
 
   var startHighlighting = function() {
     $scope.highlightIndex = 0;
@@ -47,10 +50,10 @@ app.controller('IndexController', ['$scope', '$interval', '$timeout', function (
 
       // Update next lines.
       while ($scope.lines[nextLineIndex].length < $scope.numberOfLines) {
-        var i = Math.floor((Math.random() * kulturnat.i.length));
+        var i = Math.floor((Math.random() * theList.length));
         
-        if ($scope.lines[nextLineIndex].indexOf(kulturnat.i[i]) < 0) {
-          $scope.lines[nextLineIndex].push(kulturnat.i[i]);
+        if ($scope.lines[nextLineIndex].indexOf(theList[i]) < 0) {
+          $scope.lines[nextLineIndex].push(theList[i]);
         }
       }
     }, fadeTime);
@@ -58,20 +61,26 @@ app.controller('IndexController', ['$scope', '$interval', '$timeout', function (
 
   // Start interval.
   $scope.start = function() {
+    if ($scope.whichList == 'jeg') {
+      theList = kulturnat.i;
+    } else if ($scope.whichList == 'vi') {
+      theList = kulturnat.we;
+    }
+
     // Setup first array.
     while ($scope.lines[0].length < $scope.numberOfLines) {
-      var i = Math.floor((Math.random() * kulturnat.i.length));
+      var i = Math.floor((Math.random() * theList.length));
 
-      if ($scope.lines[0].indexOf(kulturnat.i[i]) < 0) {
-        $scope.lines[0].push(kulturnat.i[i]);
+      if ($scope.lines[0].indexOf(theList[i]) < 0) {
+        $scope.lines[0].push(theList[i]);
       }
     }
     // Setup second array.
     while ($scope.lines[1].length < $scope.numberOfLines) {
-      var i = Math.floor((Math.random() * kulturnat.i.length));
+      var i = Math.floor((Math.random() * theList.length));
 
-      if ($scope.lines[1].indexOf(kulturnat.i[i]) < 0) {
-        $scope.lines[1].push(kulturnat.i[i]);
+      if ($scope.lines[1].indexOf(theList[i]) < 0) {
+        $scope.lines[1].push(theList[i]);
       }
     }
 
