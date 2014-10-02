@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html data-ng-app="app" data-ng-controller="IndexController">
 <head>
-  <title>Individ i f�llesskab</title>
+  <title>Individ i fællesskab</title>
   <meta name="author" content="Troels Ugilt Jensen">
   <link rel="stylesheet" type="text/css" href="styles.css">
   
   <!-- Import scripts -->
-  <script src="angular.min.js"></script>
-  <script src="angular-animate.min.js"></script>
+  <script src="../jquery-1.11.1.min.js"></script>
+  <script src="../angular.min.js"></script>
+  <script src="../angular-animate.min.js"></script>
 
   <!-- Custom scripts -->
   <script src="tekster.js"></script>
@@ -16,14 +17,13 @@
 <body>
   <div data-ng-show="initializing">
     Font-size: <input type="text" data-ng-model="fontsize"><br>
-    Offset x: <input type="text" data-ng-model="offsetX"><br>
-    Offset y:<input type="text" data-ng-model="offsetY"><br>
+    Number of lines pr. chunk: <input type="text" data-ng-model="numberOfLinesPrChunk"><br>
+    Scroll time: <input type="text" data-ng-model="scrollTime"> seconds<br>
     <button data-ng-click="start()">Start</button>
   </div>
   <div data-ng-show="!initializing" style="position: absolute; width: 10000px; height: 10000px;" data-ng-style="{'font-size': fontsize, 'left': offsetX, 'top': offsetY}">
     <div class="content">
-      <div class="line" data-ng-show="showLine == 0">{{lines[0]}}</div>
-      <div class="line" data-ng-show="showLine == 1">{{lines[1]}}</div>
+      <div class="line" data-ng-repeat="line in lines track by $index">{{line}}</div>
     </div>
   </div>
 </body>
