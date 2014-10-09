@@ -4,8 +4,7 @@ app.controller('IndexController', ['$scope', '$interval', '$timeout', function (
   $scope.fontsize = '25px';
   $scope.offsetX = '0px';
   $scope.offsetY = '0px';
-  $scope.numberOfLinesPrChunk = 500;
-  $scope.scrollTime = 500;
+  $scope.scrollFactor = 1000;
   $scope.initializing = true;
   $scope.sliding = false;
   $scope.whichList = "vi";
@@ -20,16 +19,8 @@ app.controller('IndexController', ['$scope', '$interval', '$timeout', function (
 
     var newLines = [];
 
-    var lastLine = "";
-    for (var i = 0; i < $scope.numberOfLinesPrChunk; i++) {
-      var newLine = null;
-      do {
-        newLine = theList[ Math.floor((Math.random() * theList.length))];
-      } while (newLine == lastLine);
-
-      newLines.push(newLine);
-
-      lastLine = newLine;
+    for (var i = 0; i < theList.length; i++) {
+      newLines.push(theList[i]);
     }
 
     $scope.$apply(function() {
@@ -44,7 +35,7 @@ app.controller('IndexController', ['$scope', '$interval', '$timeout', function (
     }
 
     // Start sliding
-    $(".content").animate({top: "-" + height + "px"}, $scope.scrollTime * 1000, "linear", startShow);
+    $(".content").animate({top: "-" + height + "px"}, $scope.lines.length * $scope.scrollFactor, "linear", startShow);
   };
 
   // Start interval.
