@@ -3,7 +3,6 @@ body {
   background-color: #000;
   font-size: 25px;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  font-weight: bold;
   overflow: hidden;
 }
 
@@ -28,7 +27,4 @@ body {
 
 .is-active {
   color: #fff;
-  text-shadow: 0 0 0.1em #FFF,
-               0 0 0.1em #FFF,
-               0 0 0.1em #FFF
 }

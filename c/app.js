@@ -10,7 +10,7 @@ app.controller('IndexController', ['$scope', '$interval', '$timeout', function (
   $scope.lines = [];
   $scope.showLine = 0;
   
-  var fadeTime = 2000;
+  var fadeTime = 2500;
   var rotationTime = 3000;
 
   var theList;
