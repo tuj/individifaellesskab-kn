@@ -8,6 +8,7 @@ app.controller('IndexController', ['$scope', '$interval', '$timeout', function (
   $scope.initializing = true;
   $scope.sliding = false;
   $scope.whichList = "vi";
+  $scope.numberOfLinesPrChunk = 500;
 
   $scope.lines = [];
 
@@ -19,8 +20,16 @@ app.controller('IndexController', ['$scope', '$interval', '$timeout', function (
 
     var newLines = [];
 
-    for (var i = 0; i < theList.length; i++) {
-      newLines.push(theList[i]);
+    var lastLine = "";
+    for (var i = 0; i < $scope.numberOfLinesPrChunk; i++) {
+      var newLine = null;
+      do {
+        newLine = theList[Math.floor((Math.random() * theList.length))];
+      } while (newLine == lastLine);
+
+      newLines.push(newLine);
+
+      lastLine = newLine;
     }
 
     $scope.$apply(function() {
