@@ -55,6 +55,14 @@ app.controller('IndexController', ['$scope', '$interval', '$timeout', function (
       theList = kulturnat.i;
     } else if ($scope.whichList == 'vi') {
       theList = kulturnat.we;
+    } else if ($scope.whichList == 'jeg40') {
+      theList = kulturnat.i40;
+    } else if ($scope.whichList == 'vi40') {
+      theList = kulturnat.we40;
+    } else if ($scope.whichList == 'jeg50') {
+      theList = kulturnat.i50;
+    } else if ($scope.whichList == 'vi50') {
+      theList = kulturnat.we50;
     }
 
     // Start the show.
