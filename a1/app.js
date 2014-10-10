@@ -1,7 +1,7 @@
 var app = angular.module('app', ['ngAnimate']);
 
 app.controller('IndexController', ['$scope', '$interval', '$timeout', function ($scope, $interval, $timeout) {
-  $scope.fontsize = '25';
+  $scope.fontsize = '40';
   $scope.offsetX = '0';
   $scope.offsetY = '0';
   $scope.initializing = true;

@@ -1,9 +1,9 @@
 var app = angular.module('app', ['ngAnimate']);
 
 app.controller('IndexController', ['$scope', '$interval', '$timeout', function ($scope, $interval, $timeout) {
-  $scope.fontsize = '25px';
-  $scope.offsetX = '0px';
-  $scope.offsetY = '0px';
+  $scope.fontsize = '40';
+  $scope.offsetX = '0';
+  $scope.offsetY = '0';
   $scope.scrollFactor = 1000;
   $scope.initializing = true;
   $scope.sliding = false;

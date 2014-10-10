@@ -24,7 +24,7 @@
     Which list: <input type="text" data-ng-model="whichList"> (vi/jeg)<br>
     <button data-ng-click="start()">Start</button>
   </div>
-  <div data-ng-show="!initializing" style="position: absolute; width: 10000px; height: 10000px;" data-ng-style="{'font-size': fontsize, 'left': offsetX, 'top': offsetY}">
+  <div data-ng-show="!initializing" style="position: absolute; width: 10000px; height: 10000px;" data-ng-style="{'font-size': fontsize + 'px', 'left': offsetX + 'px', 'top': offsetY + 'px'}">
     <div class="content">
       <div class="line" data-ng-repeat="line in lines track by $index">{{line}}</div>
     </div>
