@@ -1,9 +1,9 @@
 var app = angular.module('app', ['ngAnimate']);
 
 app.controller('IndexController', ['$scope', '$interval', '$timeout', function ($scope, $interval, $timeout) {
-  $scope.fontsize = '25px';
-  $scope.offsetX = '0px';
-  $scope.offsetY = '0px';
+  $scope.fontsize = '25';
+  $scope.offsetX = '0';
+  $scope.offsetY = '0';
   $scope.initializing = true;
   $scope.numberOfLines = 10;
   $scope.whichList = 'vi';
@@ -20,8 +20,10 @@ app.controller('IndexController', ['$scope', '$interval', '$timeout', function (
   
   $scope.highligtingInterval = undefined;
   $scope.highlightIndex = 0;
+  $scope.nonHighlightColor = "#aaa";
 
-  var highlightTime = 3500;
+  $scope.highlightTime = 2000;
+
   var fadeTime = 2000;
 
   var theList;
@@ -36,7 +38,7 @@ app.controller('IndexController', ['$scope', '$interval', '$timeout', function (
     $scope.highligtingInterval = $interval(function() {
 	  $scope.colorIndex = Math.floor((Math.random() * $scope.colors.length));
       $scope.highlightIndex = $scope.highlightIndex + 1;
-    }, highlightTime);
+    }, $scope.highlightTime);
   };
 
   var stopHightlighting = function() {
@@ -101,6 +103,6 @@ app.controller('IndexController', ['$scope', '$interval', '$timeout', function (
 
     $interval(function() {
       startShow();
-    }, fadeTime + highlightTime * $scope.numberOfLines);
+    }, fadeTime + $scope.highlightTime * $scope.numberOfLines);
   };
 }]);
